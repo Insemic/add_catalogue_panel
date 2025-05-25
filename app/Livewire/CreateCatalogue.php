@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\CatalogueForm;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Attributes\Validate;
 use App\Models\Catalogue;
 use Livewire\Component;
@@ -20,7 +21,7 @@ class CreateCatalogue extends Component
     {
         $this->form->store();
 
-        //$catalogue = Catalogue::create($validated);
+        $this->redirect('/catalogues');
 
     }
 

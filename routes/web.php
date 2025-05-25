@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\CreateCatalogue;
+use App\Livewire\UpdateCatalogue;
 Use App\Livewire\Catalogues;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
@@ -18,6 +19,8 @@ Route::view('dashboard', 'dashboard')
 Route::middleware(['auth'])->group(function () {
     Route::get('/catalogues/create', CreateCatalogue::class)
         ->name('catalogues.create');
+    Route::get('/catalogues/{catalogue}/update', UpdateCatalogue::class)
+        ->name('catalogues.update');
     Route::get('/catalogues', Catalogues::class)
         ->name('catalogues');
     Route::redirect('settings', 'settings/profile');

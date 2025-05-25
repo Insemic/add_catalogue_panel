@@ -22,17 +22,16 @@ class CatalogueForm extends Form
 
     public string $filename;
 
-    #[Validate('image|max:1024')]
+    #[Validate('image|max:10240')]
     public $image;
     public function store(): void
     {
 
         $this->validate();
         //$this->filename = $this->image->getClientOriginalName();
-        $this->filename = $this->image->store(path: 'catalogues');
+        $this->filename = $this->image->store(path: 'catalogues', options: ['disk' => 'public']);
 
         Catalogue::create(['name' => $this->name, 'type' => $this->type, 'url' => $this->url, 'filename' => $this->filename, 'description' => $this->description]);
-        //redirect('/catalogues');
     }
 
 
