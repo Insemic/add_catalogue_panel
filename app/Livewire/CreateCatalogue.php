@@ -22,7 +22,6 @@ class CreateCatalogue extends Component
         $this->form->store();
         session()->flash('created', 'Catalogue successfully created.');
 
-        $this->form->image=null;
         $this->reset();
         //$this->redirectRoute('catalogues');
 
