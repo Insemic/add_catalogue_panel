@@ -63,6 +63,7 @@
                             <flux:button variant="danger"
                                          class="inline-flex items-center px-3 py-1.5 text-sm border border-gray-300 rounded-md text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors"
                                          wire:click="delete({{ $catalogue->id }})"
+                                         wire:confirm="Are you sure you want to delete this post?"
                             >
                                 <flux:icon.trash/>
                             </flux:button>

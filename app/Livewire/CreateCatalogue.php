@@ -20,8 +20,11 @@ class CreateCatalogue extends Component
     public function save(): void
     {
         $this->form->store();
+        session()->flash('created', 'Catalogue successfully created.');
 
-        $this->redirect('/catalogues');
+        $this->form->image=null;
+        $this->reset();
+        //$this->redirectRoute('catalogues');
 
     }
 

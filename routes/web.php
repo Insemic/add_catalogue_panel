@@ -19,7 +19,7 @@ Route::view('dashboard', 'dashboard')
 Route::middleware(['auth'])->group(function () {
     Route::get('/catalogues/create', CreateCatalogue::class)
         ->name('catalogues.create');
-    Route::get('/catalogues/{catalogue}/update', UpdateCatalogue::class)
+    Route::get('/catalogues/update/{catalogue}', UpdateCatalogue::class)
         ->name('catalogues.update');
     Route::get('/catalogues', Catalogues::class)
         ->name('catalogues');

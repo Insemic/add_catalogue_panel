@@ -36,6 +36,11 @@
             </flux:field>
 
             <flux:button variant="primary" wire:click="save">Save</flux:button>
+            @if (session('created'))
+                <div class="alert alert-success">
+                    {{ session('created') }}
+                </div>
+            @endif
         </div>
     </div>
 </div>

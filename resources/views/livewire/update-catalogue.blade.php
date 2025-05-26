@@ -38,6 +38,7 @@
 
             <flux:button variant="primary" type="submit">Update</flux:button>
         </form>
+
     </div>
 </div>
 
